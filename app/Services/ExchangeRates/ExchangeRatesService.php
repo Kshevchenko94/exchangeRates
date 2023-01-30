@@ -25,7 +25,7 @@ class ExchangeRatesService implements IExchangeRatesService
      */
     public function getList(string $date): array
     {
-        $data = $this->httpClient->get(self::URL, ['date_req' => '04/01/2023']);
+        $data = $this->httpClient->get(self::URL, ['date_req' => $date]);
         return $this->prepareResponse($data->getBody());
     }
 
